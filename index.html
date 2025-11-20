@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ระบบเช็คชื่อนักเรียนอัจฉริยะ</title>
+    <title>ระบบบันทึกการฝึกงานอัจฉริยะ</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -72,7 +72,7 @@
                     <!-- Chart Container -->
                     <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 mt-6">
                         <div class="lg:col-span-2 bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
-                            <h3 class="font-semibold mb-2 text-center">สรุปการเข้าเรียน</h3>
+                            <h3 class="font-semibold mb-2 text-center">สรุปการเข้าฝึกงาน</h3>
                             <div class="max-w-[250px] mx-auto">
                                  <canvas id="attendance-pie-chart"></canvas>
                             </div>
@@ -314,8 +314,8 @@
                     const checkedInRecord = checkedInToday.get(student.studentid);
                     let statusHtml;
 
-                    if (checkedInRecord && checkedInRecord.status === 'มาเรียน') {
-                        statusHtml = `<p class="font-semibold text-sm text-green-500">สถานะ: มาเรียน (สแกนแล้ว)</p>`;
+                    if (checkedInRecord && checkedInRecord.status === 'มาฝึกงาน') {
+                        statusHtml = `<p class="font-semibold text-sm text-green-500">สถานะ: มาฝึกงาน (สแกนแล้ว)</p>`;
                     } else {
                         statusHtml = `<div class="flex gap-2" id="status-buttons-${student.studentid}"><button onclick="markStatus('${student.studentid}', 'ขาด')" class="px-3 py-1 text-sm bg-red-100 text-red-700 rounded-full hover:bg-red-200 dark:bg-red-900/50 dark:text-red-300">ขาด</button><button onclick="markStatus('${student.studentid}', 'ลา')" class="px-3 py-1 text-sm bg-yellow-100 text-yellow-700 rounded-full hover:bg-yellow-200 dark:bg-yellow-900/50 dark:text-yellow-300">ลา</button></div>`;
                     }
@@ -649,4 +649,5 @@
     </script>
 </body>
 </html>
+
 
